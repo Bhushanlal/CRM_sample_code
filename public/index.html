@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- <link rel="shortcut icon" href="%PUBLIC_URL%/bizzhive.ico" type="image/x-icon" /> -->
+  <link rel="shortcut icon" sizes="96x96" href=”%PUBLIC_URL%/favicon/android-chrome-96x96.png” type="image/png">
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon/favicon-16x16.png">
+  <link rel=”manifest” href=”%PUBLIC_URL%/manifest.json”> 
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <title>%REACT_APP_WEBSITE_NAME%</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaZ6n841laIaSndoNmJzHvyd7XRiylzXw&libraries=places"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script  src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/8bad73d027.js" crossorigin="anonymous"></script>
+    
+    <script>
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > 100) {
+               $('body').addClass('fixedheader');
+            } else {
+               $('body').removeClass('fixedheader');
+            }
+        });
+      
+    </script>
+
+  <script>
+
+    $(document).ready(function () {
+      var alterClass = function () {
+        var ww = document.body.clientWidth;
+        if (ww < 991) {
+          //$('.main-card--collapse').addClass('collapse')
+          $('.mbl-tabbing').addClass('tab-pane fade')
+         // $('.leads-col_body').addClass('collapse')
+        } else {
+          //$('.main-card--collapse').removeClass('collapse')
+          $('.mbl-tabbing').removeClass('tab-pane fade')
+          //$('.leads-col_body').removeClass('collapse')
+        };
+      };
+      $(window).resize(function () {
+        alterClass();
+      });
+      //Fire it when the page first loads:
+      setTimeout(function(){ alterClass(); }, 300);
+      
+    });
+  </script>
+
+  <script>
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 50) {
+        $('.fixed--header').addClass('fixed--elements');
+      } else {
+        $('.fixed--header').removeClass('fixed--elements');
+      }
+    });
+  </script>
+
+  <script>
+    var browserAgent = navigator.userAgent; 
+    var browserName = navigator.appName; 
+    var OffsetVersion; 
+    
+    // For Microsoft internet explorer browser check and version
+    if ((OffsetVersion = browserAgent.indexOf("MSIE")) !== -1 || browserAgent.match(/Trident.*rv\:11\./)) { 
+      browserName = "Microsoft Internet Explorer"; 
+    } 
+      //Check for Not supported MSIE
+      if((browserName === "Microsoft Internet Explorer")){ 
+        window.alert('We are unable to support your browser, Please download other Browser.')
+      }
+  </script>
+  
+</body>
+
+</html>
